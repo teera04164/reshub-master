@@ -18,11 +18,11 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://localhost/resthub');
+mongoose.connect('mongodb://localhost/resthub',{useNewUrlParser: true});
 
 var db = mongoose.connection;
 // Setup server port
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3002;
 
 
 // Send message for default URL

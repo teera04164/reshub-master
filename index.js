@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://localhost/resthub',{useNewUrlParser: true});
+mongoose.connect('mongodb://node-api:12345678aa@ds151994.mlab.com:51994/node-api',{useNewUrlParser: true})
 
 var db = mongoose.connection;
 // Setup server port
@@ -33,5 +33,7 @@ app.use('/api', apiRoutes)
 
 // Launch app to listen to specified port
 app.listen(port, function () {
+    console.log(db);
+    
     console.log("Running RestHub on port " + port);
 });
